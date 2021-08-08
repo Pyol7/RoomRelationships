@@ -22,6 +22,9 @@ class SeedData {
                 classes.forEach {
                     instance.courseDao().insert(it)
                 }
+                medicalRecord.forEach {
+                    instance.studentMedicalRecordDao().insert(it)
+                }
                 classEnrollments.forEach {
                     instance.courseEnrollmentDao().insert(it)
                 }
@@ -51,6 +54,11 @@ class SeedData {
             Course(courseName = "Databases"),
             Course(courseName = "History"),
             Course(courseName = "Spanish")
+        )
+
+        private val medicalRecord = arrayListOf(
+            StudentMedicalRecord( studentId = 1, medicalRecord = "Healthy"),
+            StudentMedicalRecord( studentId = 2, medicalRecord = "Very Healthy"),
         )
 
         private val classEnrollments = arrayListOf(

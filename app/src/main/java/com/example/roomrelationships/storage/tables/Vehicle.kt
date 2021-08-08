@@ -6,6 +6,8 @@ import androidx.room.PrimaryKey
 
 /**
  * A vehicle can belong to only one student.
+ * But without a unique studentId index, a studentId may appear many times inside this table.
+ * This allows for a one-to-many relationship to be created by another object.
  */
 
 @Entity(

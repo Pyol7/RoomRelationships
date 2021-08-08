@@ -5,10 +5,15 @@ import androidx.room.*
 import com.example.roomrelationships.storage.tables.Student
 import com.example.roomrelationships.storage.relationships.StudentWithBooksAndVehicles
 import com.example.roomrelationships.storage.relationships.StudentWithCourses
+import com.example.roomrelationships.storage.relationships.StudentWithMedicalRecord
 import com.example.roomrelationships.storage.relationships.StudentWithVehicles
 
 @Dao
 interface StudentDao {
+
+    @Query("SELECT * FROM Student")
+    @Transaction
+    fun getStudentWithMedicalRecord(): LiveData<List<StudentWithMedicalRecord>>
 
     @Query("SELECT * FROM Student")
     @Transaction

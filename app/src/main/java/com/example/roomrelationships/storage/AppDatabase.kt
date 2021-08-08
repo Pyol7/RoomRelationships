@@ -16,6 +16,7 @@ import com.example.roomrelationships.storage.daos.*
         Book::class,
         Vehicle::class,
         Course::class,
+        StudentMedicalRecord::class,
         CourseEnrollment::class
     ],
     version = 1,
@@ -28,6 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun bookDao(): BookDao
     abstract fun courseDao(): CourseDao
     abstract fun courseEnrollmentDao(): CourseEnrollmentDao
+    abstract fun studentMedicalRecordDao(): StudentMedicalRecordDao
 
     companion object {
 
